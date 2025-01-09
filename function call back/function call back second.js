@@ -1,8 +1,8 @@
 function greet(a,b){
-    console.log("hellow world")
+    console.log("hello world")
 }
-function greetalian(a,b,callback){
-    console.log("hello alian")
+function greeting(a,b,callback){
+    console.log("how are you")
 }
 setTimeout(greet,3*1000)
-//setTimeout(greetalian,3*1000)
+setTimeout(greetalian,3*1000)
