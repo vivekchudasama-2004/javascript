@@ -12,7 +12,7 @@ function displaysumpassive(data){
     console.log("sum's result : " +data)
 }
 const ans=sum(8,9,diasplaysum)
-// const ans=sum(8,9,displaysumpassive)
+const ans=sum(8,9,displaysumpassive)
 
 //
 // function arithmitic(x,y,type){
