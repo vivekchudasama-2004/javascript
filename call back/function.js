@@ -1,9 +1,9 @@
-// function sum(a,b){
-//     return parseInt(a) + parseInt(b); //if it is an string it converts into integer
-// }
-//
-// let ans = sum("1",5)
-// console.log(ans)
+function sum(a,b){
+    return parseInt(a) + parseInt(b); //if it is an string it converts into integer
+}
+
+let ans = sum("1",5)
+console.log(ans)
 
 
 function number(n){
