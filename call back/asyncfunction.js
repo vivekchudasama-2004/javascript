@@ -1,16 +1,16 @@
-// const fs = require('fs');
-//
-// function print (err ,  data){
-//     if (err) throw err;
-//     else console.log(data)
-// }
-//
-// fs.readFile('asyncfunction.js', 'utf-8', print)
-//
-// fs.readFile('b.txt', 'utf-8', print)
-//
-// console.log('done')
-//
+const fs = require('fs');
+
+function print (err ,  data){
+    if (err) throw err;
+    else console.log(data)
+}
+
+fs.readFile('asyncfunction.js', 'utf-8', print)
+
+fs.readFile('b.txt', 'utf-8', print)
+
+console.log('done')
+
 
 
 function timeout(){
