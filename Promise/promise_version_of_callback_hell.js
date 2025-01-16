@@ -26,21 +26,21 @@ call()
 //
 // or
 //
-// function setTimeoutPromisifieds(ms) {
-//     return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-//
-// setTimeoutPromisifieds(1000).then(function () {
-//     console.log("hi");
-//     setTimeoutPromisifieds(3000).then(function () {
-//         console.log("hello");
-//         setTimeoutPromisifieds(5000).then(function () {
-//             console.log("hello there");
-//         });
-//     });
-// });
-//
-//
+function setTimeoutPromisifieds(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+setTimeoutPromisifieds(1000).then(function () {
+    console.log("hi");
+    setTimeoutPromisifieds(3000).then(function () {
+        console.log("hello");
+        setTimeoutPromisifieds(5000).then(function () {
+            console.log("hello there");
+        });
+    });
+});
+
+
 // //or
 //
 // function setTimeoutPromise(ms){
