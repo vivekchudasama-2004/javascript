@@ -2,17 +2,17 @@ function setTimeoutPromisified(ms){
     let p=new Promise(function (resolve) {setTimeout(resolve, ms)}) //inisialize the promise object
     return p
 }
-//
-// function callback(){
-//     return console.log("Hello")
-// }
-//
-// function callback2(){
-//     return console.log("World")
-// }
-//
-// setTimeoutPromisified(3000).then(callback)
-// setTimeoutPromisified(5000).then(callback2)
+
+function callback(){
+    return console.log("Hello")
+}
+
+function callback2(){
+    return console.log("World")
+}
+
+setTimeoutPromisified(3000).then(callback)
+setTimeoutPromisified(5000).then(callback2)
 
 //OR
 async function call(){
