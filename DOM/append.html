@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="todo-1">
+    <h1>hi there</h1>
+    <button onclick="deletetodo(1)">delete</button>
+</div>
+
+<div id="todo-2">
+    <h1>hi there</h1>
+    <button onclick="deletetodo(2)">delete</button>
+</div>
+</body>
+<script>
+    function deletetodo(index){
+        element = document.getElementById("todo-" + index)
+        element.parentNode.removeChild(element)
+        //or
+        // element.innerHTML= ""
+    }
+
+   appendel= document.createElement("div")
+   appendel.innerHTML="new chield appended "
+   document.querySelector("body").appendChild(appendel)
+</script>
+</html>
