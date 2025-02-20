@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+<body>
+ <input type="text">
+<button onclick="AddTodo()">ADD Todo</button>
+
+<script>
+    function AddTodo(){
+        let get_value=document.querySelector("input");
+        let value =get_value.value;
+
+        let new_todo=document.createElement("div");
+        document.querySelector('body').appendChild(new_todo);
+
+        let del_todo=document.createElement("button");
+        del_todo.innerHTML="<div>"+value+"</div><button>delete</button>";
+        document.querySelector('body').appendChild(del_todo);
+
+        del_todo.addEventListener("click", function (){
+            del_todo.parentNode.removeChild(new_todo);
+            del_todo.parentNode.removeChild(del_todo);
+        })
+
+        // function dell_todo(){
+        //     del_todo.parentNode.removeChild(new_todo);
+        //     del_todo.parentNode.removeChild(del_todo);
+        // }
+    }
+</script>
+</body>
+</html>
