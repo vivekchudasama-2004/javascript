@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button onclick="AddTodo()">ADD Todo</button>
+
+<script>
+  let todo = [];
+  function AddTodo(){
+    todo.push({
+
+    })
+    render()
+  }
+
+  function deleteTodo(){
+    render()
+  }
+
+  function render(){
+    let values=document.querySelector("input").value
+    let span =document.createElement("span")
+    span.innerHTML = values
+
+    const buttons=document.createElement('button');
+    buttons.innerHTML='delete'
+
+    let addele = document.createElement('div')
+    addele.appendChild(span)
+    addele.appendChild(buttons)
+
+    adding = document.querySelector("body").appendChild(addele)
+
+    addele.addEventListener(onclick(function (){
+       addele.parentNode.removeChild(addele)
+    }))
+  }
+</script>
+</body>
+</html>
