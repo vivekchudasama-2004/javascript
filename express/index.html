@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Axios CDN -->
 </head>
-
 <body>
-<div id="posts"></div>
-<input id="a" type="text" placeholder="first input">
-<input id="b" type="text" placeholder="second input">
-<button onclick="sendRequest()">send request</button>
-
-<script>
-    async function sendRequest() {
-        const a = document.getElementById("a").value;
-        const b = document.getElementById("b").value;
-
-        try {
-            const res = await axios.get(`http://localhost:3000/sum?a=${a}&b=${b}`); // Using GET request
-            console.log(res.data);
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    }
-</script>
+<button onclick="getPost()">get the data</button>
+<div id="post"></div>
 </body>
+<script>
+async function getPost(){
+    const res=await fetch("http://jsonplaceholder.typicode.com/posts");
+    const json = await res.json();
+    for (let i=0 ; i<=json.length; i++){
+        document.getElementById("post").innerHTML+="<div><li style='list-style-type: circle' >"+json[i].title+"</li></div>"
+    }
+}
+getPost();
+</script>
 </html>
