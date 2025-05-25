@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+</head>
+<body>
+<div id="post"></div>
+</body>
+<script>
+  async function getPost(){
+    const res=await axios.get("http://jsonplaceholder.typicode.com/posts/1");
+    document.getElementById("post").innerHTML = res.data.title;
+  }
+  getPost();
+</script>
+</html>
