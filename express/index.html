@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Axios CDN -->
+</head>
+
+<body>
+<div id="posts"></div>
+<input id="a" type="text" placeholder="first input">
+<input id="b" type="text" placeholder="second input">
+<button onclick="sendRequest()">send request</button>
+
+<script>
+    async function sendRequest() {
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+
+        try {
+            const res = await axios.get(`http://localhost:3000/sum?a=${a}&b=${b}`); // Using GET request
+            console.log(res.data);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
+</script>
+</body>
+</html>
