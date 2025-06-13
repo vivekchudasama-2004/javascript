@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth Website</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+<script>
+    async function signup(){
+        const username = document.getElementById("sigupusername").value
+        const password = document.getElementById("siguppassword").value
+        await axios.post("http://localhost:3000/signup",{
+            username:username,
+            password:password
+        });
+        alert("Signup successful");
+    }
+
+    async function signin(){
+        const username=document.getElementById("siginusername").value
+        const password=document.getElementById("siginpassword").value
+
+       const response= await axios.post("http://localhost:3000/signin",{
+            username:username,
+            password:password
+        })
+
+        localStorage.setItem("token",response.data.token);
+
+        alert("Signin successful");
+    }
+
+    async function getuserinfo()
+    {
+       const response =await axios.get("http://localhost:3000/me",{
+            headers:{
+                token:localStorage.getItem("token")
+            }
+        })
+        document.getElementById("userinfo").innerHTML = "username: " + response.data.username + "password:"+ response.data.password;
+    }
+
+    function logout(){
+        localStorage.removeItem("token");
+        alert("Logged out successfully");
+    }
+</script>
+<body>
+<h1>Authentication Website</h1>
+
+<div>
+    <b>sigup</b>
+<label for="sigupusername">Username:</label>
+<input type="text" name="username" id="sigupusername" placeholder="Enter your username">
+<label for="siguppassword">Password:</label>
+<input type="password" name="password" id="siguppassword" placeholder="Enter your password">
+<button onclick="signup()">Login</button>
+</div>
+
+<div>
+    <b>signin</b>
+<label for="siginusername">Username:</label>
+<input type="text" name="username" id="siginusername" placeholder="Enter your username">
+<label for="siginpassword">Password:</label>
+<input type="password" name="password" id="siginpassword" placeholder="Enter your password">
+<button onclick="signin()">Login</button>
+</div>
+<div>
+    <b>Get User Info</b>
+    <button onclick="getuserinfo()">Get User Info</button>
+    <p id="userinfo"></p>
+</div>
+
+<div>
+    <button onclick="login()">Login</button>
+</div>
+
+<div>
+    <button onclick="logout()">Logout</button>
+</div>
+
+</body>
+</html>
